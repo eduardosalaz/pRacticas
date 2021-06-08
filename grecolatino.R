@@ -1,0 +1,26 @@
+r1 <- c(10, 16, 23, 24, 20)
+r2 <- c(15, 20, 25, 20, 18.5)
+r3 <- c(21.5, 24, 25, 16.5, 19)
+r4 <- c(20, 32, 14, 18, 27)
+r5 <- c(30, 12, 17.5, 25, 30)
+
+y <- c(r1, r2, r3, r4, r5)
+fr <- factor(rep(1:5, each = 5))
+fc <- factor(rep(1:5, times = 5))
+
+l1 <- c('A', 'B', 'C', 'D', 'E')
+l2 <- c('B', 'C', 'D', 'E', 'A')
+l3 <- c('C', 'D', 'E', 'A', 'B')
+l4 <- c('D', 'E', 'A', 'B', 'C')
+l5 <- c('E', 'A', 'B', 'C', 'D')
+
+fl <- factor(c(l1,l2,l3,l4,l5))
+#alfa = a, beta = b, gamma = g, delta = d, epsilon = e
+g1 <- c('a', 'g', 'e', 'b', 'd')
+g2 <- c('b', 'd', 'a', 'g', 'e')
+g3 <- c('g', 'e', 'b', 'd', 'a')
+g4 <- c('d', 'a', 'g', 'e', 'b')
+g5 <- c('e', 'b', 'd', 'a', 'g')
+fg <- factor(c(g1,g2,g3,g4,g5))
+y.aov <- aov(y ~ fr + fc + fl +fg)
+print(summary(y.aov))
